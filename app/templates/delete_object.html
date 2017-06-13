@@ -1,0 +1,10 @@
+<title>20 que</title>
+{%if objects%}
+    <form name="delete_objects" action="/admin/do" method="post">
+    {% for key, value in objects.items() %}
+        <input type="checkbox" name="obj_id" value="{{key}}"> {{key}}-- {{value}}
+        <br />
+     {% endfor %}
+    <input type="submit" value="Submit">
+    </form>
+{%endif%}

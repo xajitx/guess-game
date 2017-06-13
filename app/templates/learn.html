@@ -1,0 +1,15 @@
+<body style ="background-color: lightblue;
+    text-align: center;">
+<title>20 que</title>
+<form action="/learn" method="post">
+    <h1>Who were you thinking of?</h1>
+
+    {%for object in nearby_objects%}
+        <label><input type="radio" name="name" class="known" value="{{object[1]}}">{{object[1]}}</label><br>
+    {%endfor%}
+    <input type="radio" name="name" id="unknown" value="new"><input type="text" name="new_character" id="new_character" ><br>
+
+
+    <p><input type="submit" value="submit"></p>
+</form>
+</body>

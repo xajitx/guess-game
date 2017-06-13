@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>20 que</title>
+</head>
+<body>
+
+<div id="display_data">
+{% for key, value in data.items() %}
+      <tr>  <a href="/admin/retrain/{{key}}"> RETRAIN {{key}} - {{value}}</a></tr>
+        <br />
+{% endfor %}
+
+</div>
+</body>
+</html>

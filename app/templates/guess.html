@@ -1,0 +1,20 @@
+<body style ="background-color: lightblue;
+    text-align: center;">
+<title>20 que</title>
+{%if chosen%}
+    <p>I guess....</p>
+    <h1 id="guess">{{chosen[1]}}</h1>
+    <p>Was I right?</p>
+    <form action="/guess/{{chosen[0]}}" method="post" id="answer_form">
+        <input type="submit" name="answer" value="yes">
+        <input type="submit" name="answer" value="no">
+
+    </form>
+
+{%else%}
+    <p>I've got nothing.</p>
+    <form action="/guess" method="post">
+        <input type="submit" name="answer" value="teach me">
+    </form>
+{%endif%}
+</body>

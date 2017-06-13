@@ -1,0 +1,38 @@
+<body style ="background-color: lightblue;
+    text-align: center;">
+<title>20 que</title>
+{%if question == 'begin'%}
+    <header>
+        <hgroup>
+            <h1>Welcome to 20 Questions!</h1>
+        </hgroup>
+    </header>
+    <h1>Think of any animal or vegitable</h1>
+    <br />
+    <form action="/begin" method="post">
+        <input type="submit" value="Begin!">
+    </form>
+
+{% elif question%}
+    <p><span id="count">{{count}} :</span>{{question[1]}}</p>
+    <form action="/answer/{{question[0]}}" method="post" id="answer_form">
+        <input type="submit" name="answer" value="yes">
+        <input type="submit" name="answer" value="unsure">
+        <input type="submit" name="answer" value="no">
+
+    </form>
+    <br />
+    <form action="/restart" method="post">
+        <input type="submit" value="restart">
+    </form>
+{%endif%}
+{%if nearby_objects_values%}
+    <h2>Considering...</h2>
+    {%for i in range(nearby_objects_values|length)%}
+       <tr>
+           <td>{{ nearby_objects_values[i][1][1]}} :--></td>
+           <td>{{nearby_objects_values[i][0]}}</td>
+       </tr></br>
+    {%endfor%}
+{%endif%}
+</body>

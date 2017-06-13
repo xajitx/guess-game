@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20 que</title>
+</head>
+<body>
+        <div id="retrain">
+        <h1>{{obj_id}}</h1><h1>{{obj_val}}</h1>
+        <form name="retrain" action="/adddata/newtrain/{{obj_id}}" method="post">
+            <table>
+            {% for key, value in questions.items() %}
+                <tr>
+                    <td>{{value}}  ::  <label><input type="radio" name="{{key}}" value="yes">Yes</label><label><input type="radio" name="{{key}}" value="unsure">Unsure</label><label><input type="radio" name="{{key}}" value="no">No</label> </td>
+                    <td><span class="value">current={{data[(obj_id, key)]}}</span></td>
+                </tr>
+            {%endfor%}
+            </table>
+            <input type="submit" value="submit">
+        </form>
+        </div>
+</body>
+</html>

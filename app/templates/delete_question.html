@@ -1,0 +1,11 @@
+<title>20 que</title>
+<form name="delete_questions" action="/admin/dq" method="post">
+{%if questions%}
+    {% for key, value in questions.items() %}
+     <input type="checkbox" name="ques_id" value={{key}}> {{key}} -- {{value}}
+        <br />
+     {%endfor%}
+    <input type="submit" value="Submit">
+
+{%endif%}
+     </form>
